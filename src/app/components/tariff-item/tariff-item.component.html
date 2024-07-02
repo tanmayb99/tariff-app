@@ -1,0 +1,81 @@
+<div class="tariff-card">
+  <!-- ID Column -->
+  <div class="id-column">
+    <div class="id-content">
+      <p><span class="id-number">{{ tariff.id }}</span></p>
+    </div>
+  </div>
+
+  <!-- Tariff Name Column -->
+  <div class="tariff-name-column">
+    <div class="tariff-details">
+      <div class="tariff-name">{{ tariff.name }}</div>
+    </div>
+  </div>
+
+    <div class="download-upload-column">
+      <div class="row">
+        <div class="col">
+          <p class="text-center">Download</p>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+
+      <!-- 2nd Row -->
+      <div class="row">
+        <div class="col">
+          <div class="box">
+            <div class="download-icon"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="speed-box">
+            <span class="speed-value">{{ formatSpeed(tariff.downloadSpeed) }} Mbit/s</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd Row -->
+      <div class="row">
+        <div class="col">
+          <p class="text-center">Upload</p>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+
+      <!-- 4th Row -->
+      <div class="row">
+        <div class="col">
+          <div class="box">
+            <div class="upload-icon"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="speed-box">
+            <span class="speed-value">{{ formatSpeed(tariff.uploadSpeed) }} Mbit/s</span>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Tariff Benefits Column -->
+  <div class="tariff-benefits-column">
+    <div class="tariff-details">
+      <div class="tariff-benefits">
+        <ul>
+          <li *ngFor="let benefit of tariff.benefits">{{ benefit }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Price Column -->
+  <div class="price-column">
+    <div class="price">{{ tariff.price }} €</div>
+    <div class="tariff-footer">
+      <button mat-button class="to-tariff-button">To Tariff >></button>
+    </div>
+  </div>
+</div>

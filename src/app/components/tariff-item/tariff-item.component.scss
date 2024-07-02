@@ -1,0 +1,251 @@
+.tariff-card {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 15px;
+
+  .id-column {
+    width: 30px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    p {
+      margin: 0;
+    }
+  }
+
+  .tariff-name-column {
+    flex: 0.5;
+    padding: 10px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .download-upload-column {
+    width: 200px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .speed-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+
+      .speed-label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .speed-value {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .tariff-benefits-column {
+    position: relative;
+    flex: 1;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    left: 120px;
+  }
+
+  .price-column {
+    width: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .to-tariff-button {
+      bottom: 12px;
+      border: 1px solid black;
+      padding: 8px 16px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 4px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  /* Media query for tablet screens */
+  @media screen and (max-width: 1024px) {
+    .id-column {
+      border: none;
+    }
+
+    .tariff-name-column,
+    .download-upload-column,
+    .tariff-benefits-column,
+    .price-column {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      border-bottom: 1px solid black;
+    }
+
+    .id-content {
+      text-align: center;
+    }
+
+    .download-upload-column {
+      display: flex;
+      flex-direction: column;
+      border-right: none;
+      padding-right: 0;
+      margin-bottom: 10px;
+    }
+
+    .speed-section {
+      width: 100%;
+    }
+
+    .to-tariff-button {
+      width: auto;
+    }
+
+    .tariff-details {
+      .download-upload-column .speed-label,
+      .download-upload-column .speed-value {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+
+    .tariff-details .download-upload-column .speed-label:first-child,
+    .tariff-details .download-upload-column .speed-value:first-child {
+      display: none;
+    }
+  }
+
+  /* Media query for mobile screens */
+  @media screen and (max-width: 767px) {
+    .tariff-card {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .id-column,
+    .tariff-name-column,
+    .download-upload-column {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      border-bottom: 1px solid black;
+    }
+
+    .price-column {
+      width: auto;
+    }
+
+    .to-tariff-button {
+      margin-top: auto;
+      transform: rotate(90deg);
+      height: 80px;
+      width: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 1.5);
+      transition: background-color 0.3s ease;
+
+      .material-icons {
+        font-size: 24px;
+        transform: rotate(-90deg);
+      }
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+
+    .download-upload-column .speed-section {
+      width: 100%;
+    }
+
+    .download-upload-column .speed-value {
+      margin-top: 10px;
+    }
+  }
+}
+
+/* Styles for boxes */
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  height: 20px;
+  width: 72px;
+}
+
+.speed-box {
+  position: relative;
+  width: 100px;
+  height: 23px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 60px;
+    height: 100%;
+    border-radius: 50%;
+    border-right: 2px solid black;
+  }
+}
+
+/* Simple download and upload icons */
+.download-icon::before {
+  content: "⬇";
+  font-size: 15px;
+}
+
+.upload-icon::before {
+  content: "⬆";
+  font-size: 15px;
+}
+
+/* Optional: Center text vertically in columns */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: Center text horizontally */
+.text-center {
+  text-align: center;
+}
+
+.speed-value {
+  position: relative;
+  right: -20px;
+}

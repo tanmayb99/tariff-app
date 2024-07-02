@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="sort-controls">
+    <mat-form-field appearance="fill">
+      <mat-label>Sort by</mat-label>
+      <mat-select (selectionChange)="setSortAttribute($event.value)">
+        <mat-option value="price">Price</mat-option>
+        <mat-option value="downloadSpeed">Download Speed</mat-option>
+        <mat-option value="uploadSpeed">Upload Speed</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="tariff-list-container">
+    <ng-container *ngIf="tariffs$ | async as tariffs; else loading">
+      <app-tariff-item *ngFor="let tariff of tariffs | sortTariff:sortAttribute" [tariff]="tariff"></app-tariff-item>
+    </ng-container>
+    <ng-template #loading>Loading...</ng-template>
+  </div>
+</div>
